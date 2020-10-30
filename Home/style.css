@@ -5,5 +5,66 @@ body {
 
 main {
     height: 100%;
-    background-color: red;
+}
+
+.gradient-border {
+    --border-width: 3px;
+    position: relative;
+    font-size: 2.5rem;
+    background: white;
+}
+
+.gradient-border::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: calc(100% + var(--border-width));
+    background: linear-gradient(
+        60deg,
+        white,  
+        lightgray,
+        gray,
+        lightgray,
+        white
+    );
+    background-size: 300% 300%;
+    background-position: 0 50%;
+    animation: moveGradient 8s alternate infinite;
+}
+
+@keyframes moveGradient {
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+
+
+.btn-grad {background-image: linear-gradient(to right, #1F1C2C 0%, #928DAB  51%, #1F1C2C  100%)}
+.btn-grad {
+    width: 150px;
+    padding: 8px 20px;
+    text-align: center;
+    transition: 0.3s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    animation: moveGradient 4s alternate infinite;
+}
+
+.btn-grad:hover {
+    color: white;    
+    box-shadow: 0px 10px 7px lightgray;
+}
+
+@keyframes btn-grad-action {
+    50% {
+        background-position: right center; /* change the direction of the change here */
+        color: #fff;
+        text-decoration: none;
+    }
 }
