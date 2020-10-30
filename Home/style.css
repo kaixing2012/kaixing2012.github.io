@@ -7,44 +7,20 @@ main {
     height: 100%;
 }
 
-.gradient-border {
-    --border-width: 3px;
-    position: relative;
-    font-size: 2.5rem;
-    background: white;
+#openText {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.gradient-border::after {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    z-index: -1;
-    width: 100%;
-    height: calc(100% + var(--border-width));
-    background: linear-gradient(
-        60deg,
-        white,  
-        lightgray,
-        gray,
-        lightgray,
-        white
-    );
-    background-size: 300% 300%;
-    background-position: 0 50%;
-    animation: moveGradient 8s alternate infinite;
+.text-shadow-bottom {
+    text-shadow: 0px 10px 7px lightgray;
 }
 
-@keyframes moveGradient {
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-
-
-.btn-grad {background-image: linear-gradient(to right, #1F1C2C 0%, #928DAB  51%, #1F1C2C  100%)}
 .btn-grad {
+    background-image: linear-gradient(to right, #642B73 0%, #C6426E  51%, #642B73  100%)
+}
+
+.btn-grad {
+    font-size: 20px;
     width: 150px;
     padding: 8px 20px;
     text-align: center;
@@ -53,7 +29,7 @@ main {
     color: white;            
     box-shadow: 0 0 20px #eee;
     border-radius: 10px;
-    animation: moveGradient 4s alternate infinite;
+    animation: btn-grad-action 4s alternate infinite;
 }
 
 .btn-grad:hover {
@@ -68,3 +44,4 @@ main {
         text-decoration: none;
     }
 }
+         
