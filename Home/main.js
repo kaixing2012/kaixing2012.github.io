@@ -1,26 +1,31 @@
-function onOpanClick() {
-    let main = document.querySelector(`main`)
-    main.style.transition = "all 2s ease"
-    main.style.backgroundColor = "black"
+let envelope = document.querySelector(`.envelope`)
+let cover = document.querySelector(`.cover`)
+let paper = document.querySelector(`.paper`)
+let active = false;
 
-    let openContainer = document.querySelector(`#openContainer`)
-    openContainer.lastElementChild.style.boxShadow = "none"
-    openContainer.style.transition = "all 1s ease"
-    openContainer.style.opacity = "0"
-    setTimeout(() => {
-        openContainer.style.display = "none"
-
-        let welcomecontainer = document.querySelector(`#welcomeContainer`)
-        welcomecontainer.classList.remove("d-none")
-        welcomecontainer.style.opacity = "0"
-        welcomecontainer.style.transition = "all 2s ease"
+envelope.addEventListener('click', () => {
+    if (!active) {
 
         setTimeout(() => {
-            welcomecontainer.style.opacity = "1"
-        }, 500);
+            cover.style.zIndex = "-1"
+        }, 200);
 
-    }, 1000);
+        cover.style.transition = "all 1s ease"
+        cover.style.transform = "rotateX(180deg)"
 
+        paper.style.transition = "all 1s 1s ease";
+        paper.style.top = "10%";
+    } else {
+        setTimeout(() => {
+            cover.style.zIndex = "1"
+        }, 100);
 
+        cover.style.transition = "all 1s 1s ease"
+        cover.style.transform = "rotateX(0deg)"
 
-}
+        paper.style.transition = "all 1s ease";
+        paper.style.top = "50%";
+    }
+
+    active = !active
+})

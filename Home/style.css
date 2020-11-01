@@ -1,47 +1,73 @@
-html,
 body {
-    height: 100vh;
+    padding: 0;
+    margin: 0;
 }
 
-main {
-    height: 100%;
+.container {
+
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
 }
 
-#openText {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+.envelope {
+    background-color: #d74443;
+    height: 150px;
+    width: 270px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.text-shadow-bottom {
-    text-shadow: 0px 10px 7px lightgray;
+.inner1 {
+    width: 0;
+    height: 0;
+    border-bottom: 150px solid #e15349;
+    border-right: 270px solid transparent;
+    position: absolute;
 }
 
-.btn-grad {
-    background-image: linear-gradient(to right, #642B73 0%, #C6426E  51%, #642B73  100%)
+.inner2 {
+    width: 0;
+    height: 0;
+    border-bottom: 150px solid #e95e55;
+    border-left: 270px solid transparent;
+    position: absolute;
 }
 
-.btn-grad {
-    font-size: 20px;
-    width: 150px;
-    padding: 8px 20px;
-    text-align: center;
-    transition: 0.3s;
-    background-size: 200% auto;
-    color: white;            
-    box-shadow: 0 0 20px #eee;
-    border-radius: 10px;
-    animation: btn-grad-action 4s alternate infinite;
+.cover {
+    width: 0;
+    height: 0;
+    border-top: 75px solid #ce554c;
+    border-right: 135px solid transparent;
+    border-left: 135px solid transparent;
+    position: absolute;
+    transform-origin: top;
 }
 
-.btn-grad:hover {
-    color: white;    
-    box-shadow: 0px 10px 7px lightgray;
+.paper {
+    background-color: lightgray;
+    border-radius: 20px;
+    height: 140px;
+    width: 250px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-@keyframes btn-grad-action {
-    50% {
-        background-position: right center; /* change the direction of the change here */
-        color: #fff;
-        text-decoration: none;
-    }
+.button {
+    background-color: lightslategray;
+    border: 1px solid lightslategray;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
-         
